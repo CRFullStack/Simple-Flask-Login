@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        .Absolute-Center.is-Responsive {
+            width: 50%;
+            height: 50%;
+            min-width: 200px;
+            max-width: 400px;
+            padding: 40px;
+        }
+        .Absolute-Center {
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        #bg {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+        }
+            #bg img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                min-width: 50%;
+                min-height: 50%;
+                opacity: 0.8;
+                filter: alpha(opacity=50); /* For IE8 and earlier */
+            }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: gray;
+            color: white;
+            text-align: center;
+            opacity: 0.8;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="bg">
+        <img class="img-responsive" src="https://www.w3schools.com/w3images/nature.jpg" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="Absolute-Center is-Responsive">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="Username">Username:</label>
+                            <input type="text" class="form-control" id="email" placeholder="Username" name="email" value="{{ request.form.email }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" value="{{ request.form.pwd }}">
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="remember"> Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-info btn-sm">Log in!</button>
+                    </form>
+                    {% if error %}
+                        <p class="error"><strong>Error:</strong>{{ error }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <!--/.Copyright-->
+        <footer class="page-footer blue center-on-small-only">
+            chris_the_codeR © 2018 Copyright: <a href="http://www.chrishobdy.tech"><span class="glyphicon glyphicon-star"></span></a>
+        </footer>
+    </div>
+
+
+
+</body>
+</html>
